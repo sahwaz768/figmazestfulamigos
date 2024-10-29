@@ -198,7 +198,7 @@ function page() {
       {/* First Modal */}
       {showModal1 && (
         <div className="modal">
-          <div className="modal-content">
+          <div className="modal-content animate">
             <span className="close" onClick={handleCloseModal1}>
               &times;
             </span>

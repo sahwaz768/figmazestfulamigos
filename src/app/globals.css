@@ -248,6 +248,21 @@ body{
   color: black;
 }
 
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
 
 /* Media query for smaller devices */
 
@@ -411,4 +426,740 @@ body{
   border-radius: 10px;
   color: white;
   margin-top: 10px;
+}
+
+/* choose companion gender page */
+.genderbox{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(250, 235, 239);
+}
+.genderbox h1{
+  padding-top: 40px;
+  padding-left: 30px;
+}
+.genderbox p{
+ 
+  padding-left: 40px;
+}
+.imgbox{
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  
+}
+.leftimg{
+  width: 50vw;
+}
+.leftimg button{
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  border-width: 5px;
+  border-color: #333;
+  float: right;
+  cursor: pointer;
+  background-image: url('homepageimg.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+  
+}
+
+.rightimg button{
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  border-width: 5px;
+  border-color: rgb(255, 115, 138);
+  background-image: url('homepageimg.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  .leftimg{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .rightimg{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .genderbox h1{
+    
+    padding-top: 20px;
+    padding-left: 7px;
+  }
+  .genderbox p{
+    padding-top: 10px;
+    padding-left: 7px;
+  }
+}
+/* swipe page desigh */
+
+.swipebox{
+  width: 100vw;
+  height: 120vh;
+  background-color: rgb(253, 144, 162);
+}
+.swipeheader{
+  padding: 10px 15px;
+}
+.bellicon{
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px 2px;
+  width: 50px;
+  cursor: pointer;
+  
+}
+
+.dropdown-menu {
+  position: fixed;
+  top: 100px; /* Adjust to where you want it to be vertically */
+  right: 10px; /* Position it to the right of the screen */
+  width: 20%;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-20px);
+  z-index: 4;
+  
+  
+}
+/* swipe card */
+
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Background Cards - Responsive size */
+.bg-card {
+  position: absolute;
+  width: 20%; /* Responsive width */
+  height: 60%; /* Responsive height */
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+/* First layer of background cards (closer to front) */
+.bg-card-left-1 {
+  transform: translate(-85%, -50%) rotate(-15deg);
+  filter: brightness(0.7);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.bg-card-right-1 {
+  transform: translate(-15%, -50%) rotate(15deg);
+  filter: brightness(0.7);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+/* Second layer of background cards (furthest back) */
+.bg-card-left-2 {
+  transform: translate(-95%, -50%) rotate(-25deg);
+  filter: brightness(0.6);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.bg-card-right-2 {
+  transform: translate(-5%, -50%) rotate(25deg);
+  filter: brightness(0.6);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.container {
+  
+  background-color: rgb(255, 190, 201);
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 85%; /* Responsive width */
+  max-width: 370px;
+  height: 120%; 
+  position: relative;
+  z-index: 3;
+}
+
+
+.card-container {
+  padding-top: 50px;
+  position: relative;
+  width: 90%;
+  max-width: 250px; /* Fixed max width */
+  margin: 0 auto;
+  padding-bottom: 0rem;
+ 
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Responsive width */
+  height: 320px;
+  margin-left: 15px;
+}
+.card img {
+  width: 100%;
+  height: 85%; /* Responsive height */
+  object-fit: cover;
+  display: block;  
+}
+
+.bg-card img {
+  width: 100%;
+  height: auto; /* Responsive height */
+  object-fit: cover;
+  display: block;
+}
+
+.card-footer {
+  padding: 1rem;
+  text-align: left;
+  background: white;
+}
+
+.tags {
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #666;
+  display: inline-block;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.nav-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+  background-color: #f5f5f5;
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 768px) {
+  .bg-card {
+      width: 25%;
+      height: 60%;
+  }
+
+  .container {
+      width: 95%;
+      height: 65%; /* Reduce height for smaller screens */
+  }
+
+  .card-container {
+      width: 100%;
+  }
+
+  .navigation {
+      gap: 0.5rem;
+  }
+
+  .nav-button {
+      width: 30px;
+      height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+ 
+
+  .card-footer {
+      padding: 0.75rem;
+  }
+
+  .bg-card {
+      width: 25%;
+      height: 60%;
+  }
+
+  .nav-button {
+      width: 25px;
+      height: 25px;
+  }
+
+  .container {
+      height: 65%; /* Adjust container height for mobile */
+  }
+}
+
+/* Specific adjustments for 360x915 resolution */
+@media (max-width: 360px) and (max-height: 915px) {
+  .wrapper {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 1rem;
+  }
+
+  .bg-card {
+      width: 2%;
+      height: 4%;
+  }
+
+
+
+  .card-container {
+      width: 100%;
+      padding-bottom: 1.5rem;
+  }
+
+  .container {
+      width: 100%;
+      padding: 0.5rem;
+      max-width: 340px;
+      height: 60%; /* Reduced height for 360x915 */
+  }
+
+  .card-footer {
+      padding: 0.75rem;
+  }
+
+  .nav-button {
+      width: 20px;
+      height: 20px;
+  }
+}
+
+.txtimg{
+  height: 10px;
+  width: 70px;
+  box-sizing: border-box;
+  position: absolute;
+  color: white;
+  bottom: 68px;
+  background: transparent;
+  text-align: start;
+  margin: 0px 5px;
+}
+.imgtag1{
+  font-size: small;
+  background-color: #ececec;
+  height: 25px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  color: black;
+}
+.imgtag2{
+  font-size: small;
+  margin-left: 113px;
+  background-color: #ececec;
+  height: 25px;
+  padding: 1px 8px;
+  border-radius: 15px;
+  color: black;
+}
+/* full detail profile page */
+.detailbox{
+  display: flex;
+  justify-content: center;
+  
+  
+
+}
+.detail{
+  border-width: 1px;
+  border-color: #bebebe;
+  border-radius: 8px;
+  padding: 15px;
+
+}
+
+
+
+
+.horizontalimg img{
+  width: 330px;
+  height: 450px;
+  border-radius: 10px;
+  
+
+}
+.vertical img{
+  width: 250px;
+  height: 220px;
+  border-radius: 10px;
+}
+.tag{
+  background-color: rgb(248, 199, 207);
+  padding: 10px 8px;
+  color: black;
+  font-size: larger;
+  font-weight: 400;
+}
+.toppr{
+  display: flex;
+  flex-wrap: wrap;
+}
+.prtag{
+  border-top-width: 1px;
+  border-radius: 10px;
+  border-top-color: #333;
+  padding: 10px;
+  margin: 5px 10px;
+  font-size: small;
+
+
+}
+.cntbtn2{
+  display: flex;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background-color: rgb(252, 105, 130);
+  width: 35%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+ 
+}
+.arrowbtn2{
+  padding: 10px;
+  background-color: #333;
+  border-radius: 10px;
+  font-size: medium;
+  
+  
+}
+
+/* time slote design */
+
+.timeslotebox{
+  width: 50vw;
+  
+ 
+}
+.slotebox{
+  margin: 0px 50px;
+}
+
+.time-slots-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+ 
+}
+
+.time-slot {
+  border-top-width: 1px;
+  border-radius: 10px;
+  border-top-color: #333;
+  border-bottom-width: 1px;
+  border-bottom-color: #333;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+  margin: 5px 20px;
+  
+}
+
+.time-slot.selected {
+  background-color: rgb(201, 0, 0);
+  color: black;
+}
+
+.divStyle {
+  border-top-width: 1px;
+  border-radius: 10px;
+  border-top-color: #333;
+  border-bottom-width: 1px;
+  border-bottom-color: #333;
+  
+  padding: 10px 18px;
+  
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  font-size: 18px;
+  
+ 
+  
+  margin: 5px 20px;
+  border-radius: 10px;
+}
+
+.divStyle.toggled {
+  background-color: rgb(201, 0, 0);
+}
+.purposeinput{
+  padding: 20px;
+  height: 380px;
+  width: 100%;
+  border-radius: 30px;
+  border-left-width: 1px; 
+  border-left-color: rgb(253, 89, 116);
+  border-right-width: 1px; 
+  border-right-color: rgb(248, 57, 88);
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(255, 30, 68);
+}
+
+
+.cntbtn3{
+  display: flex;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background-color: rgb(252, 105, 130);
+  width: 45%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+ 
+}
+.arrowbtn3{
+  padding: 10px;
+  background-color: #333;
+  border-radius: 10px;
+  font-size: medium;
+  
+  
+}
+
+/*  payment page */
+
+.card-validation-form {
+  display: flex;
+  margin: 10px 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  
+
+}
+
+.card-detailbox{
+ min-height: 60vh;
+  width: 50vw;
+  
+  
+}
+.cardicon{
+  background-color: rgb(252, 167, 181);
+  border-width: 4px;
+  border-color: rgb(250, 29, 66);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardinputfieldlg{
+  width: 40vw;
+  font-size: 10px;
+  
+ 
+}
+.cardinputfieldlg::placeholder {
+  font-size: 14px;
+ 
+}
+.cardinputfieldsm{
+  width: 7vw;
+ 
+}
+.cardinputfieldsm::placeholder {
+  font-size: 14px;
+ 
+}
+
+.card-validation-form input[type="text"] {
+  
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.card-validation-form input[type="text"]:focus {
+  outline: none;
+  border-color: rgb(255, 93, 120);
+  box-shadow: 0px 0px 4px rgba(0, 123, 255, 0.2);
+}
+
+.card-validation-form button {
+  width: 25%;
+  padding: 10px;
+  background-color: rgb(253, 96, 123);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+ float: right;
+  margin-right: 5px;
+  
+}
+
+.card-validation-form button:hover {
+  background-color: rgb(255, 63, 95);
+}
+
+.upiapp{
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  border-color: #333;
+  border-radius: 10px;
+}
+.upiapp img{
+  width: 90px;
+  height: 30px;
+  
+}
+.bankselect{
+  width: 75%;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 5px;
+  border-color: #afafaf;
+  border-width: 1px;
+}
+
+
+
+@media (max-width: 800px) {
+  .card-validation-form{
+    display: flex;
+    flex-direction: column;
+  }
+  .card-detailbox{
+    width: 100%;
+  }
+  .cardinputfieldlg{
+    width: 70vw;
+  }
+  .cardinputfieldsm{
+    width: 14vw;
+  }
+  
+}
+@media (max-width: 500px) {
+  
+  
+  .cardinputfieldlg{
+    width: 50vw;
+  }
+  .cardinputfieldsm{
+    width: 20vw;
+  }
+  
+}
+
+/* chat page design */
+
+.chat-top-box{
+  min-height: 80vh;
+  margin: 8px 20px;
+ 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.sidebar{
+  width: 50px;
+  height: 80vh;
+padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  gap: 20px;
+}
+.sidebar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.chatlist{
+  padding: 5px 1px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+.userlist{
+  padding-top: 10px;
+  border-top-color: rgb(99, 98, 98);
+ 
+  border-top-width: 2px;
+}
+.userdetail{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.userdetail:hover{
+  background-color: rgb(252, 98, 123);
+}
+.userdetail img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.userstatus{
+  margin-left: 160px;
+  margin-top: 20px;
+  color: #666;
 }
